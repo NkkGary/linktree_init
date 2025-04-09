@@ -25,6 +25,7 @@ function Navbar() {
         <button className="close-btn" onClick={toggleMobileMenu}>✕</button>
         <ul className="sidebar-links">
           <li><Link to="/" onClick={toggleMobileMenu}>Home</Link></li>
+          <li><Link to="/portfolio" onClick={toggleMobileMenu}>Portfolio</Link></li>
           {/* <li><Link to="/about" onClick={toggleMobileMenu}>About</Link></li> */}
           {/* <li><Link to="/contact" onClick={toggleMobileMenu}>Contact</Link></li> */}
           <li><Link to="/auth" onClick={toggleMobileMenu}>Auth</Link></li>
@@ -34,6 +35,7 @@ function Navbar() {
       {/* Desktop navbar links */}
       <ul className="navbar-links">
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/portfolio">Portfolio</Link></li>
         {/* <li><Link to="about">About</Link></li> */}
         {/* <li><Link to="contact">Contact</Link></li> */}
         <li><Link to="/auth">Auth</Link></li>
