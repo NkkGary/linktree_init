@@ -10,17 +10,33 @@ function Home() {
       <h2 className="username">@nkkgary</h2>
 
       <div className="links">
-        {links.map((link, index) => (
-          <a
-            key={index}
-            className="link-button"
-            href={link.url}
-            target={link.url.startsWith("http") ? "_blank" : "_self"}
-            rel="noopener noreferrer"
-          >
-            {link.label}
-          </a>
-        ))}
+        {links.map((link, index) => {
+          if (link.label === "View Resume") {
+            return (
+              <a
+                key={index}
+                href={`${process.env.PUBLIC_URL}/resume.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-button"
+              >
+                {link.label}
+              </a>
+            );
+          } else {
+            return (
+              <a
+                key={index}
+                className="link-button"
+                href={link.url}
+                target={link.url.startsWith("http") ? "_blank" : "_self"}
+                rel="noopener noreferrer"
+              >
+                {link.label}
+              </a>
+            );
+          }
+        })}
       </div>
     </div>
   );
