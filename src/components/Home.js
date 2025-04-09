@@ -1,6 +1,7 @@
 import React from "react";
 import profileImage from "../assets/test_icon.jpg";
 import links from "../data/links.json"; // ⬅️ JSON import
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
       <div className="links">
         {links.map((link, index) => {
           if (link.label === "View Resume") {
+            return (<></>);
             return (
               <a
                 key={index}
@@ -23,7 +25,7 @@ function Home() {
                 {link.label}
               </a>
             );
-          } else {
+          }  else if (link.url.startsWith("http")) {
             return (
               <a
                 key={index}
@@ -34,6 +36,13 @@ function Home() {
               >
                 {link.label}
               </a>
+            );
+          }else {
+            // Internal links
+            return (
+              <Link key={index} className="link-button" to={link.url}>
+                {link.label}
+              </Link>
             );
           }
         })}
